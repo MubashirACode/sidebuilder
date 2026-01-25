@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+
+@import "@daveyplate/better-auth-ui/css";
+
+
+@custom-variant dark (&:is(.dark *));
+
+* {
+    font-family: "Outfit", "snas-serif";
+}
+
+@layer base {
+    buttton {
+        @apply cursor-pointer
+    }
+}
+
+.no-scrollbar ::-webkit-scrollbar{
+    display: none;
+
+}
+
+@keyframes fade-in{
+    0%{opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.animate-fade-in{
+    animation:fade-in 0.8s ease-out;
+
+}
+
+@theme inline {
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --radius-2xl: calc(var(--radius) + 8px);
+    --radius-3xl: calc(var(--radius) + 12px);
+    --radius-4xl: calc(var(--radius) + 16px);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+    --radius: 0.625rem;
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+}
+
+
+
+
+
+/* Custom Prism Theme - VS Code Dark+ Style */
+
+/* Code block container */
+pre[class*="language-"] {
+    margin: 0 !important;
+    padding: 1rem !important;
+    background: #1e1e1e !important;
+    border-radius: 0 0 1rem 1rem !important;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
+    font-size: 0.75rem !important;
+    line-height: 1.6 !important;
+    overflow-x: auto !important;
+    color: #d4d4d4 !important;
+}
+
+code[class*="language-"] {
+    background: transparent !important;
+    color: #d4d4d4 !important;
+    text-shadow: none !important;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
+}
+
+/* Scrollbar for code blocks */
+pre[class*="language-"]::-webkit-scrollbar {
+    height: 6px;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-track {
+    background: #252526;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-thumb {
+    background: #424242;
+    border-radius: 3px;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-thumb:hover {
+    background: #4e4e4e;
+}
+
+/* Syntax highlighting colors - VS Code Dark+ theme */
+
+/* Comments */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #6a9955 !important;
+    font-style: italic !important;
+}
+
+/* Punctuation */
+.token.punctuation {
+    color: #d4d4d4 !important;
+}
+
+/* Properties, tags */
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #b5cea8 !important;
+}
+
+/* Selectors, attributes */
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #ce9178 !important;
+}
+
+/* Operators */
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #d4d4d4 !important;
+}
+
+/* Keywords */
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: #c586c0 !important;
+}
+
+/* Functions */
+.token.function,
+.token.class-name {
+    color: #dcdcaa !important;
+}
+
+/* Regex, important */
+.token.regex,
+.token.important,
+.token.variable {
+    color: #d16969 !important;
+}
+
+/* HTML/XML tags */
+.token.tag .token.tag {
+    color: #569cd6 !important;
+}
+
+.token.tag .token.punctuation {
+    color: #808080 !important;
+}
+
+/* Attributes */
+.token.attr-name {
+    color: #9cdcfe !important;
+}
+
+.token.attr-value {
+    color: #ce9178 !important;
+}
+
+/* CSS selectors and properties */
+.token.selector {
+    color: #d7ba7d !important;
+}
+
+.token.property {
+    color: #9cdcfe !important;
+}
+
+/* JavaScript/TypeScript specific */
+.token.keyword.keyword-import,
+.token.keyword.keyword-export,
+.token.keyword.keyword-from {
+    color: #c586c0 !important;
+}
+
+.token.keyword.keyword-const,
+.token.keyword.keyword-let,
+.token.keyword.keyword-var {
+    color: #569cd6 !important;
+}
+
+/* Bold and italic */
+.token.important,
+.token.bold {
+    font-weight: bold !important;
+}
+
+.token.italic {
+    font-style: italic !important;
+}
+
+/* Namespace */
+.token.namespace {
+    opacity: 0.7 !important;
+}
+
+/* Line highlight */
+pre[class*="language-"] > code[class*="language-"] {
+    display: block !important;
+}
+
+/* Selection */
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+    background: #264f78 !important;
+    color: inherit !important;
+}
